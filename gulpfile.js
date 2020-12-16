@@ -22,4 +22,4 @@ function copyfont() {
     .pipe(dest('./lib/fonts'));
 }
 
-exports.build = series(compile, copyfont);
+exports.default = series(compile, copyfont);
