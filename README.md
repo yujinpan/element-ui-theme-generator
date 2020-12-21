@@ -1,33 +1,48 @@
-# element-theme-chalk
-> element component chalk theme.
+# element-ui-theme-generator
 
+## Change variables
 
-## Installation
-```shell
-npm i element-theme-chalk -S
+```scss
+// src/common/var.scss
+
+$--color-primary: red;
 ```
 
-## Usage
+## Generate
 
-Use Sass import
-```css
-@import 'element-theme-chalk';
+```sh
+$ gulp
 ```
 
-Or Use webpack
-```javascript
-import 'element-theme-chalk';
+## Add to project
+
+- Copy the lib folder to your project, example: [project]/src/styles/element-theme/lib
+
+- Install babel-plugin-component
+
+```sh
+$ npm install --save-dev babel-plugin-component
 ```
 
-Or
-```html
-<link rel="stylesheet" href="path/to/node_modules/element-theme-chalk/lib/index.css">
-```
+- Add plugin to babel.config.js
 
-##  Import on demand
-```javascript
-import 'element-theme-chalk/lib/input.css';
-import 'element-theme-chalk/lib/select.css';
-
-// ...
+```js
+// babe.config.js
+module.exports = {
+  plugins: [
+    // ... else
+    [
+      'component',
+      {
+        libraryName: 'element-ui',
+        styleLibrary: {
+          // the theme lib root dictionary, need ~
+          name: '~src/styles/element-theme/lib',
+          path: '[module].css',
+          base: true
+        }
+      }
+    ]
+  ]
+};
 ```
