@@ -16,6 +16,12 @@ $ gulp
 
 ## Add to project
 
+### Fully import
+
+- Copy the `lib/index.css, lib/fonts` to your project, and import the `lib/index.css`.
+
+### On demand
+
 - Copy the lib folder to your project, example: [project]/src/styles/element-theme/lib
 
 - Install babel-plugin-component
@@ -46,3 +52,9 @@ module.exports = {
   ]
 };
 ```
+
+
+## Update version
+
+- add remote `git remote add element git@github.com:ElementUI/theme-chalk.git`
+- update local `git pull element master`
